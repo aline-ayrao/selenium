@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ExerciciosNovaAba_selenium {
-    WebDriver driver;
+    static WebDriver driver;
 
     @Before
     public void iniciaTeste(){
@@ -30,7 +30,7 @@ public class ExerciciosNovaAba_selenium {
     }
 
     @AfterClass
-    public void after() throws InterruptedException {
+    public static void after() throws InterruptedException {
         driver.quit();
     }
 }

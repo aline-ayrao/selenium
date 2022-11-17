@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ExerciciosAlertas_selenium {
-    WebDriver driver;
+    static WebDriver driver;
 
     @Before
     public void iniciaTeste(){
@@ -55,7 +55,7 @@ public class ExerciciosAlertas_selenium {
 
     }
     @AfterClass
-    public void after() throws InterruptedException {
+    public static void after() throws InterruptedException {
         driver.quit();
     }
 }

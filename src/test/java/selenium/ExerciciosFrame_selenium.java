@@ -10,24 +10,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class ExerciciosFrame_selenium {
-    WebDriver driver;
+   static WebDriver driver;
 
     @Before
     public void iniciaTeste(){
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
-        driver.get("https://demo.automationtesting.in/Windows.html");
+        driver.get("https://demo.automationtesting.in/Frames.html");
     }
     
     @Test
     public void testeIFrameSimples(){
         driver.switchTo().frame("singleframe"); //muda o contexto do driver para o frame
+        driver.findElement(By.xpath("//input[@type='text']")).click();
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys("Teste QA Academy");
         driver.switchTo().defaultContent(); //voltar para o contexto anterior
     }
 
     @AfterClass
-    public void after() throws InterruptedException {
+    public static void after() throws InterruptedException {
         driver.quit();
     }
 }
